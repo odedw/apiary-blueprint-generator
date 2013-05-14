@@ -10,6 +10,8 @@ namespace ApiaryBlueprintGenerator.Models
     public class DocumentationModel
     {
         public string AssemblyName { get; set; }
+        public string Host { get; set; }
+        public string Title { get; set; }
         public List<SectionModel> Sections { get; set; }
 
         public DocumentationModel()

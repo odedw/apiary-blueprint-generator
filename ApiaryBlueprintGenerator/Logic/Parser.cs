@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using ApiaryBlueprintGenerator.Models;
+using ApiaryBlueprintGenerator.Models.Tags;
 
 namespace ApiaryBlueprintGenerator
 {
@@ -12,12 +13,16 @@ namespace ApiaryBlueprintGenerator
     {
         private readonly string mInputFile;
         private readonly string mNamespacePrefix;
+        private readonly string mHost;
+        private readonly string mTitle;
         private readonly TagFactory mTagFactory = new TagFactory();
 
-        public Parser(string inputFile, string namespacePrefix)
+        public Parser(string inputFile, string title, string host, string namespacePrefix)
         {
             mInputFile = inputFile;
             mNamespacePrefix = namespacePrefix;
+            mHost = host;
+            mTitle = title;
         }
 
         public DocumentationModel Parse()
@@ -25,7 +30,7 @@ namespace ApiaryBlueprintGenerator
             try
             {
                 //Load and get assembly name
-                var model = new DocumentationModel();
+                var model = new DocumentationModel { Host = mHost, Title = mTitle };
                 XDocument xDocument = XDocument.Load(mInputFile);
                 model.AssemblyName = xDocument.Root.Element("assembly").Element("name").Value;
 

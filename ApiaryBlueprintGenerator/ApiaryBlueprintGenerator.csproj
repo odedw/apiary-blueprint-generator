@@ -44,8 +44,15 @@
     <Compile Include="Logic\TagFactory.cs" />
     <Compile Include="Models\DocumentationModels.cs" />
     <Compile Include="Logic\Parser.cs" />
+    <Compile Include="Models\Tags\ExampleTag.cs" />
+    <Compile Include="Models\Tags\ParamTag.cs" />
+    <Compile Include="Models\Tags\RemarksTag.cs" />
+    <Compile Include="Models\Tags\BaseTag.cs" />
     <Compile Include="Models\Tags\ITag.cs" />
+    <Compile Include="Models\Tags\ResourceTag.cs" />
+    <Compile Include="Models\Tags\ReturnsTag.cs" />
     <Compile Include="Models\Tags\SummaryTag.cs" />
+    <Compile Include="Models\Tags\TitleTag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

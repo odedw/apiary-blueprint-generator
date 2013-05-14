@@ -21,7 +21,7 @@ namespace ApiaryBlueprintGenerator
 
             foreach (Type type in typesInThisAssembly)
             {
-                if (type.GetInterface(typeof(ITag).ToString()) != null)
+                if (type.GetInterface(typeof(ITag).ToString()) != null && !type.IsAbstract)
                 {
                     var tag = Activator.CreateInstance(type) as ITag;
                     mTags.Add(tag.TagName.ToLower(), type);
