@@ -17,9 +17,7 @@ namespace ShoppingCartExample.Controllers
         ///     <response name="Content-Type">application/json</response>
         /// </headers>
         /// <example>
-        ///     <code type="output">
-        ///         { "items": [{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }] }
-        ///     </code>
+        ///     <code type="output"> { "items": [{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }] } </code>
         /// </example>        
         public Dictionary<string, object> Get()
         {
@@ -45,13 +43,9 @@ namespace ShoppingCartExample.Controllers
         ///     <request name="Content-Type">application/json</request>
         ///     <response name="Content-Type">application/json</response>
         /// </headers>
-        /// <example>
-        ///     <code type="input">
-        ///        { "product":"1AB23ORM", "quantity": 2 }
-        ///     </code>  
-        ///     <code type="output">
-        ///         { "status": "created", "url": "/shopping-cart/2" }
-        ///     </code>
+        /// <example> 
+        ///     <code type="input"> { "product":"1AB23ORM", "quantity": 2 } </code>  
+        ///     <code type="output"> { "status": "created", "url": "/shopping-cart/2" } </code>
         /// </example>        
         /// <returns status-code="201"></returns>
         public HttpResponseMessage Post(Dictionary<string, object> newItem)
@@ -63,11 +57,5 @@ namespace ShoppingCartExample.Controllers
                        };
             return Request.CreateResponse(HttpStatusCode.Created, dict);
         }
-
-        // GET api/<controller>/5
-        //        public Dictionary<string, object> Get(int id)
-        //        {
-        //            return "value";
-        //        }
     }
 }

@@ -13,14 +13,10 @@ namespace ShoppingCartExample.Controllers
         /// <summary> This resource allows you to submit payment information to process your *shopping cart* items </summary>
         /// <resource method="POST" content-type="application/json">/payment</resource>
         /// <example>
-        ///     <code type="input">
-        ///        { "cc": "12345678900", "cvc": "123", "expiry": "0112" }
-        ///     </code>  
-        ///     <code type="output">
-        ///         { "receipt": "/payment/receipt/1" }
-        ///     </code>
+        ///     <code type="input"> { "cc": "12345678900", "cvc": "123", "expiry": "0112" } </code>  
+        ///     <code type="output"> { "receipt": "/payment/receipt/1" } </code>
         /// </example>        
-        public Dictionary<string, string> Post()
+        public Dictionary<string, string> Post(Dictionary<string, object> newItem)
         {
             return new Dictionary<string, string>
                        {

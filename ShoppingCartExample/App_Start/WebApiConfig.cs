@@ -10,7 +10,7 @@ namespace ShoppingCartExample
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
+                name: "ShoppingCart",
                 routeTemplate: "api/shopping-cart/{id}",
                 defaults: new { id = RouteParameter.Optional, controller = "ShoppingCart" }
             );
