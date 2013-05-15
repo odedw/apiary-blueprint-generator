@@ -105,7 +105,7 @@ ApiaryBlueprintGenerator.exe ..\..\..\ShoppingCartExample\bin\ShoppingCartExampl
 Check out the shopping cart example project to see a properly documented project.
 
 ##Extention
-* To add more tags just add a class that implements the `ITag` interface or the `BaseTag` class.
+* To add more tags just add a class that implements the `ITag` interface or extends the `BaseTag` class.
 * To change the output check out the `BlueprintCreator` class
 
 ##Licence
