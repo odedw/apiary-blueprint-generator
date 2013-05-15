@@ -5,15 +5,18 @@ Generate an Apiary blueprint from a .Net XML documentation file. Integrate into 
 ##Usage
 
 The blueprint generator is a command line application. It accepts the following parameters:
-* Input file name (*Required*)                  : name of the input XML file
-* Output file name (*Required*)                 : name of the output txt file
-* API documentation title (*Required*)          : Title for the API documentation
-* Host address (*Optional*)                     : host address for the real server
-* API documentation description (*Optional*)    : description for the API
-* Desired clasess namespace prefix (*Optional*) : the desired controllers namespace (all other documentation will be filtered out)
+* Input file name (Required)                  : name of the input XML file
+* Output file name (Required)                 : name of the output txt file
+* API documentation title (Required)          : Title for the API documentation
+* Host address (Optional)                     : host address for the real server
+* API documentation description (Optional)    : description for the API
+* Desired clasess namespace prefix (Optional) : the desired controllers namespace (all other documentation will be filtered out)
 
 Example usage:
-`..\..\..\ShoppingCartExample\bin\ShoppingCartExample.XML ShoppingCartExample.txt "Sample API v2" -d "Welcome to the our sample API documentation. All comments can be written in (support [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax)" -h http://www.google.com/ -n ShoppingCartExample.Controllers`
+```
+ApiaryBlueprintGenerator.exe ..\..\..\ShoppingCartExample\bin\ShoppingCartExample.XML ShoppingCartExample.txt "Sample API v2" 
+-d "Welcome to the our sample API documentation. All comments can be written in (support [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax)" -h http://www.google.com/ -n ShoppingCartExample.Controllers
+```
 
 ##Licence
 
