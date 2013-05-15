@@ -23,28 +23,90 @@ The blueprint generator is a command line application. It accepts the following 
 
 
 Example usage:
-```..\..\..\ShoppingCartExample\bin\ShoppingCartExample.XML ShoppingCartExample.txt "Sample API v2" -d "Welcome to the our sample API documentation." -h http://www.google.com/ -n ShoppingCartExample.Controllers```
+```
+..\..\..\ShoppingCartExample\bin\ShoppingCartExample.XML ShoppingCartExample.txt "Sample API v2" 
+-d "Welcome to the our sample API documentation." -h http://www.google.com/ -n ShoppingCartExample.Controllers
+```
 
 ##Documentation Tags
+
+####Class Tags
 <table>
   <tr>
-    <th>Type</th><th>Tag</th><th>Description</th><th>Required</th>
+    <th>Tag</th><th>Description</th><th>Required</th>
   </tr>
   <tr>
-    <td>Class</td>
 	<td>&lt;title&gt;</td>
 	<td>The section's title</td>
 	<td>✓</td>
   </tr>
   <tr>
-    <td>Class</td>
 	<td>&lt;summary&gt;</td>
 	<td>The section's description</td>
-	<td>✓</td>
+	<td></td>
   </tr>
 </table>
 
+####Method Tags
+<table>
+  <tr>
+    <th>Tag</th><th>Description</th><th>Attributes</th><th>Required</th>
+  </tr>
+  <tr>
+	<td>&lt;summary&gt;</td>
+	<td>The resource's description</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>&lt;resource&gt;</td>
+	<td>The resource's path (element value) and HTTP method (attribute)</td>
+	<td>method</td>
+	<td>✓</td>
+  </tr>
+  <tr>
+	<td>&lt;headers&gt;</td>
+	<td>A list of &lt;request&gt; or &lt;response&gt; elements containing headers to be returned from the resource</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>&lt;request&gt;</td>
+	<td>A header to be included in the request (nested in the &lt;headers&gt; tag)</td>
+	<td>name</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>&lt;response&gt;</td>
+	<td>A header to be included in the response (should be nested in the &lt;headers&gt; tag)</td>
+	<td>name</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>&lt;returns&gt;</td>
+	<td>Contains (in an attribute) the HTTP status code that is expected from this resource, The default code is 200</td>
+	<td>status-code</td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>&lt;example&gt;</td>
+	<td>Contains (in nested &lt;code&gt; tags) input and output value examples</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+	<td>&lt;code&gt;</td>
+	<td>Contains an input/output (stated in the type attribute) value example(should be nested in the &lt;example&gt; tag)</td>
+	<td>type</td>
+	<td></td>
+  </tr>
+</table>
 
+Check out the shopping cart example project for a complete example that generates Apiary's example blueprint.
+
+##Extention
+* To add more tags just add a class that implements the ITag interface or the BaseTag class.
+* To change the output check out the BlueprintCreator class
 
 ##Licence
 
