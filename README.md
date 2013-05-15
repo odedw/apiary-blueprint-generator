@@ -1,6 +1,6 @@
 ﻿#Apiary Blueprint Generator
 
-Generate an Apiary blueprint from a .Net XML documentation file. Integrate into your deployment process and use Apiary's future API to upload the blueprint for a full solution.
+Generate an [Apiary blueprint](http://apiary.io/blueprint) from a .Net XML documentation file. Integrate into your deployment process and use [Apiary's](http://apiary.io) future API to upload the blueprint for a full solution.
 Every class is considered to be a section, and every method is considered to be a resource.
 
 ##Usage
