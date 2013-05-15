@@ -24,7 +24,7 @@ The blueprint generator is a command line application. It accepts the following 
 
 Example usage:
 ```
-..\..\..\ShoppingCartExample\bin\ShoppingCartExample.XML ShoppingCartExample.txt "Sample API v2" 
+ApiaryBlueprintGenerator.exe ..\..\..\ShoppingCartExample\bin\ShoppingCartExample.XML ShoppingCartExample.txt "Sample API v2" 
 -d "Welcome to the our sample API documentation." -h http://www.google.com/ -n ShoppingCartExample.Controllers
 ```
 
@@ -102,10 +102,10 @@ Example usage:
   </tr>
 </table>
 
-Check out the shopping cart example project for a complete example that generates Apiary's example blueprint.
+Check out the shopping cart example project to see a properly documented project.
 
 ##Extention
-* To add more tags just add a class that implements the ITag interface or the BaseTag class.
+* To add more tags just add a class that implements the `ITag` interface or the `BaseTag` class.
 * To change the output check out the BlueprintCreator class
 
 ##Licence
