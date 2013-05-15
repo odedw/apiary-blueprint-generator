@@ -1,22 +1,50 @@
-#Apiary Blueprint Generator
+﻿#Apiary Blueprint Generator
 
 Generate an Apiary blueprint from a .Net XML documentation file. Integrate into your deployment process and use Apiary's future API to upload the blueprint for a full solution.
+Every class is considered to be a section, and every method is considered to be a resource.
 
 ##Usage
 
 The blueprint generator is a command line application. It accepts the following parameters:
-* Input file name (Required)                  : name of the input XML file
-* Output file name (Required)                 : name of the output txt file
-* API documentation title (Required)          : Title for the API documentation
-* Host address (Optional)                     : host address for the real server
-* API documentation description (Optional)    : description for the API
-* Desired clasess namespace prefix (Optional) : the desired controllers namespace (all other documentation will be filtered out)
+<dl>
+  <dt>Input file name (Required)</dt>
+  <dd>The name of the input XML file</dd>
+  <dt>Output file name (Required)</dt>
+  <dd>The name of the output txt file</dd>
+  <dt>API documentation title (Required)</dt>
+  <dd>The Title for the API documentation</dd>
+  <dt>Host address (Optional)</dt>
+  <dd>The host address for the real server</dd>
+  <dt>API documentation description (Optional)</dt>
+  <dd>The description for the API</dd>
+  <dt>Desired clasess namespace prefix (Optional)</dt>
+  <dd>The desired controllers namespace (all other documentation will be filtered out)</dd>
+</dl>
+
 
 Example usage:
-```
-ApiaryBlueprintGenerator.exe ..\..\..\ShoppingCartExample\bin\ShoppingCartExample.XML ShoppingCartExample.txt "Sample API v2" 
--d "Welcome to the our sample API documentation. All comments can be written in (support [Markdown](http://daringfireball.net/projects/markdown/syntax) syntax)" -h http://www.google.com/ -n ShoppingCartExample.Controllers
-```
+```..\..\..\ShoppingCartExample\bin\ShoppingCartExample.XML ShoppingCartExample.txt "Sample API v2" -d "Welcome to the our sample API documentation." -h http://www.google.com/ -n ShoppingCartExample.Controllers```
+
+##Documentation Tags
+<table>
+  <tr>
+    <th>Type</th><th>Tag</th><th>Description</th><th>Required</th>
+  </tr>
+  <tr>
+    <td>Class</td>
+	<td>&lt;title&gt;</td>
+	<td>The section's title</td>
+	<td>✓</td>
+  </tr>
+  <tr>
+    <td>Class</td>
+	<td>&lt;summary&gt;</td>
+	<td>The section's description</td>
+	<td>✓</td>
+  </tr>
+</table>
+
+
 
 ##Licence
 
