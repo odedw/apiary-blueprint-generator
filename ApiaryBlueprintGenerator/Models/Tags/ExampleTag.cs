@@ -10,8 +10,8 @@ namespace ApiaryBlueprintGenerator.Models.Tags
     public class ExampleTag : BaseTag
     {
         public override string TagName { get { return "example"; } }
-        private string mInputExample;
-        private string mOutputExample;
+        public string InputExample { get; set; }
+        public string OutputExample { get; set; }
 
         public override void Load(XElement xElement)
         {
@@ -24,11 +24,11 @@ namespace ApiaryBlueprintGenerator.Models.Tags
                 {
                     if (attr.Value == "input")
                     {
-                        mInputExample = codeElement.Value.Trim();
+                        InputExample = codeElement.Value.Trim();
                     }
                     else if (attr.Value == "output")
                     {
-                        mOutputExample = codeElement.Value.Trim();
+                        OutputExample = codeElement.Value.Trim();
                     }
                 }
             }

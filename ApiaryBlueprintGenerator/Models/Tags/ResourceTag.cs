@@ -9,5 +9,10 @@ namespace ApiaryBlueprintGenerator.Models.Tags
     public class ResourceTag : BaseTag
     {
         public override string TagName { get { return "resource"; } }
+
+        public string HttpMethod
+        {
+            get { return Attributes["method"]; }
+        }
     }
 }

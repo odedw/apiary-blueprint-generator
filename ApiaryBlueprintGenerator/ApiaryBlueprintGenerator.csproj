@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\BlueprintCreator.cs" />
     <Compile Include="Logic\TagFactory.cs" />
     <Compile Include="Models\DocumentationModels.cs" />
     <Compile Include="Logic\Parser.cs" />
     <Compile Include="Models\Tags\ExampleTag.cs" />
+    <Compile Include="Models\Tags\HeadersTag.cs" />
     <Compile Include="Models\Tags\ParamTag.cs" />
     <Compile Include="Models\Tags\RemarksTag.cs" />
     <Compile Include="Models\Tags\BaseTag.cs" />

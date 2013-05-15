@@ -12,6 +12,7 @@ namespace ApiaryBlueprintGenerator.Models
         public string AssemblyName { get; set; }
         public string Host { get; set; }
         public string Title { get; set; }
+        public string Description { get; set; }
         public List<SectionModel> Sections { get; set; }
 
         public DocumentationModel()
@@ -23,12 +24,12 @@ namespace ApiaryBlueprintGenerator.Models
     public class SectionModel
     {
         public string SectionName { get; set; }
-        public List<ITag> TypeTags { get; set; }
+        public List<ITag> SectionTags { get; set; }
         public List<ResourceModel> Resources { get; set; }
 
         public SectionModel()
         {
-            TypeTags = new List<ITag>();
+            SectionTags = new List<ITag>();
             Resources = new List<ResourceModel>();
         }
     }

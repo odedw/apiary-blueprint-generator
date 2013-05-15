@@ -15,14 +15,16 @@ namespace ApiaryBlueprintGenerator
         private readonly string mNamespacePrefix;
         private readonly string mHost;
         private readonly string mTitle;
+        private readonly string mDescription;
         private readonly TagFactory mTagFactory = new TagFactory();
 
-        public Parser(string inputFile, string title, string host, string namespacePrefix)
+        public Parser(string inputFile, string title, string host, string description, string namespacePrefix)
         {
             mInputFile = inputFile;
             mNamespacePrefix = namespacePrefix;
             mHost = host;
             mTitle = title;
+            mDescription = description;
         }
 
         public DocumentationModel Parse()
@@ -30,7 +32,7 @@ namespace ApiaryBlueprintGenerator
             try
             {
                 //Load and get assembly name
-                var model = new DocumentationModel { Host = mHost, Title = mTitle };
+                var model = new DocumentationModel { Host = mHost, Title = mTitle, Description = mDescription };
                 XDocument xDocument = XDocument.Load(mInputFile);
                 model.AssemblyName = xDocument.Root.Element("assembly").Element("name").Value;
 
@@ -54,7 +56,7 @@ namespace ApiaryBlueprintGenerator
                         var tag = mTagFactory.CreateTag(tagElement);
                         if (tag != null)
                         {
-                            section.TypeTags.Add(tag);
+                            section.SectionTags.Add(tag);
                         }
                     }
                     model.Sections.Add(section);
